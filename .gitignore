@@ -1,0 +1,14 @@
+.idea
+config
+/venv
+__pycache__
+*.env
+*.sqlite3
+alembic/versions
+/logs
+/figs
+saved_figure.png
+config
+config_wallet
+config_wallet_test
+*.spec
