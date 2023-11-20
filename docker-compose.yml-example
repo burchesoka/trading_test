@@ -1,0 +1,9 @@
+version: '3.7'
+
+services:
+  trading_bot_test:
+    build: .
+    command: python3 trading_bot_v3.py
+    volumes:
+      - ./logs:/trading/logs
+    restart: unless-stopped
