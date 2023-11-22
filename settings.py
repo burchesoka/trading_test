@@ -1,19 +1,12 @@
 import os
-from pydantic import BaseSettings
+from dotenv import load_dotenv
 
 
-class Settings(BaseSettings):
-    service_name: str
-    prod: bool = False
-    test: bool = False
+class Settings:
+    load_dotenv()
 
-    user_id: int = 1
-    user_secret_key: str = ""
-
-    logging_level: int = 10
+    user_id = os.getenv('USER_ID')
+    user_secret_key = os.getenv('USER_SECRET_KEY')
 
 
-settings = Settings(
-    _env_file=os.path.join(os.getcwd(), '.env'),
-    _env_file_encoding='utf-8',
-)
+settings = Settings()
